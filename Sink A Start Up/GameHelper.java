@@ -66,7 +66,8 @@ public class GameHelper {
             }
         }
 
-        // Convert raw numeric grid positions into letter/number coordinates (e.g., "b3")
+        // Convert raw numeric grid positions into letter/number coordinates (e.g.,
+        // "b3")
         int x = 0;
         int row = 0;
         int column = 0;
@@ -83,4 +84,14 @@ public class GameHelper {
 
         return alphaCells;
     }
+
+    public static boolean isValidCoordinate(String input) {
+        if (input == null || input.length() != 2) {
+            return false;
+        }
+        char column = Character.toUpperCase(input.charAt(0));
+        char row = input.charAt(1);
+        return (column >= 'A' && column <= 'G') && (row >= '0' && row <= '6');
+    }
+
 }
